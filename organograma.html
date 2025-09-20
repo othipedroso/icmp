@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organograma do Poder - ICMP</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/autocomplete.css">
+</head>
+<body>
+  <!-- Navegação -->
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">ICMP</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="quem-cobrar.html">Quem Cobrar?</a></li>
+        <li><a href="organograma.html" aria-current="page">Organograma</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="missao.html">Nossa Missão</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container">
+      <h1>Organograma do Poder</h1>
+      <p>Veja quem ocupa os principais cargos do Brasil — do nível federal ao municipal.</p>
+    </div>
+  </header>
+
+  <!-- Conteúdo -->
+  <main>
+    <div class="container">
+      <section class="section-card">
+        <div class="toolbar" style="flex-direction: column; gap: 1rem;">
+          <!-- Estado -->
+          <div style="position:relative; width:100%;">
+            <input type="text" id="estado-input" placeholder="Digite o Estado...">
+            <div id="estado-sugestoes" class="suggestions"></div>
+          </div>
+          <!-- Cidade -->
+          <div style="position:relative; width:100%;">
+            <input type="text" id="cidade-input" placeholder="Digite a Cidade..." disabled>
+            <div id="cidade-sugestoes" class="suggestions"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <h2>Nível Federal</h2>
+        <div id="federal-container" class="role-grid"></div>
+      </section>
+
+      <section class="section-card">
+        <h2>Nível Estadual</h2>
+        <div id="estadual-container" class="role-grid"></div>
+      </section>
+
+      <section class="section-card">
+        <h2>Nível Municipal</h2>
+        <div id="municipal-container" class="role-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 ICMP - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/organograma.js"></script>
+</body>
+</html>

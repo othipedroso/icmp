@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quem Cobrar? - ICMP</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navegação -->
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">ICMP</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="quem-cobrar.html" aria-current="page">Quem Cobrar?</a></li>
+        <li><a href="organograma.html">Organograma</a></li>
+        <li><a href="noticias.html">Notícias do Governo</a></li>
+        <li><a href="missao.html">Nossa Missão</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container">
+      <h1>Quem você deve cobrar?</h1>
+      <p>Digite seu Estado e Cidade para ver quem está no poder.</p>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="container">
+      <!-- Toolbar com autocomplete -->
+      <section class="section-card">
+        <div class="toolbar">
+  <div style="position:relative;flex:1">
+    <input id="uf-input" type="text" placeholder="Digite o Estado" />
+    <ul class="autocomplete-list"></ul>
+  </div>
+  <div style="position:relative;flex:1">
+    <input id="cidade-input" type="text" placeholder="Digite a Cidade" disabled />
+    <ul class="autocomplete-list"></ul>
+  </div>
+</div>
+
+      </section>
+ <!-- Governador -->
+      <section class="section-card">
+      <h2>Governador</h2>
+      <div id="governador-container" class="role-grid"></div>
+      </section>
+ <!-- Vice-Governador -->
+      <section class="section-card">
+      <h2>Vice-Governador</h2>
+      <div id="vicegovernador-container" class="role-grid"></div>
+      </section>
+ 
+      </section>
+
+
+      <!-- Prefeito -->
+      <section class="section-card">
+        <h2>Prefeito</h2>
+        <div id="prefeito-container" class="role-grid"></div>
+      </section>
+
+      <!-- Vice-Prefeito -->
+      <section class="section-card">
+      <h2>Vice-Prefeito</h2>
+      <div id="viceprefeito-container" class="role-grid"></div>
+
+      <!-- Vereadores -->
+      <section class="section-card">
+        <h2>Vereadores</h2>
+        <div id="vereadores-container" class="role-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 ICMP - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script type="module" src="js/quem-cobrar.js"></script>
+</body>
+</html>
