@@ -22,8 +22,25 @@ export function normalize(s) {
 
 // Gera card de político
 export function card(p) {
+  const params = new URLSearchParams();
+  if (p?.id !== undefined && p?.id !== null) {
+    params.set("id", p.id);
+  }
+  const tipoInferido = (() => {
+    if (p?.tipo) return p.tipo;
+    const cargo = (p?.cargo || "").toLowerCase();
+    if (cargo.includes("senador")) return "senado";
+    if (cargo.includes("deputado")) return "camara";
+    return undefined;
+  })();
+  if (tipoInferido) {
+    params.set("tipo", tipoInferido);
+  }
+
+  const href = `perfil.html?${params.toString()}`;
+
   return `
-    <a class="role-card" href="perfil.html?id=${p.id}">
+    <a class="role-card" href="${href}">
       <img src="${p.foto}" alt="Foto de ${p.nome}" onerror="this.src='/photos/placeholder.jpg'">
       <div class="role-body">
         <h5>${p.nome}</h5>

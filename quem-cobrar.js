@@ -1,105 +1,221 @@
+import { getJSON, card, normalize } from "./utils.js";
+
+const API_BASE = "";
+
 const ufInput = document.getElementById("uf-input");
 const cidadeInput = document.getElementById("cidade-input");
+const ufList = ufInput.nextElementSibling;
+const cidadeList = cidadeInput.nextElementSibling;
 
+const governadorContainer = document.getElementById("governador-container");
+const viceGovernadorContainer = document.getElementById("vicegovernador-container");
 const prefeitoContainer = document.getElementById("prefeito-container");
+const vicePrefeitoContainer = document.getElementById("viceprefeito-container");
 const vereadoresContainer = document.getElementById("vereadores-container");
 
 let estados = [];
 let cidades = [];
+let estadoSelecionado = null;
 
-// Normaliza texto para ignorar acentos/maiúsculas
-function normalize(str) {
-  return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+function renderMessage(container, message) {
+  container.innerHTML = `<p>${message}</p>`;
 }
 
-// Fetch com tratamento de erro
-async function getJSON(url) {
-  try {
-    const res = await fetch(url);
-    const json = await res.json();
-    return json.data || [];
-  } catch (e) {
-    console.error("Erro:", e);
-    return [];
+function renderCards(container, items, emptyMessage, { onlyFirst = false } = {}) {
+  if (!items || items.length === 0) {
+    renderMessage(container, emptyMessage);
+    return;
   }
+
+  if (onlyFirst) {
+    container.innerHTML = card(items[0]);
+    return;
+  }
+
+  container.innerHTML = items.map(card).join("");
 }
 
-// Cria lista de autocomplete
-function createAutocomplete(inputEl, data, onSelect) {
-  let listEl = inputEl.nextElementSibling;
-  if (!listEl || !listEl.classList.contains("autocomplete-list")) {
-    listEl = document.createElement("ul");
-    listEl.className = "autocomplete-list";
-    inputEl.parentNode.appendChild(listEl);
-  }
+function limparMunicipio() {
+  renderMessage(prefeitoContainer, "Selecione uma cidade.");
+  renderMessage(vicePrefeitoContainer, "Selecione uma cidade.");
+  renderMessage(vereadoresContainer, "Selecione uma cidade.");
+}
 
-  inputEl.addEventListener("input", () => {
-    const query = normalize(inputEl.value);
-    listEl.innerHTML = "";
+function limparEstado() {
+  renderMessage(governadorContainer, "Selecione um estado.");
+  renderMessage(viceGovernadorContainer, "Selecione um estado.");
+  limparMunicipio();
+}
 
-    if (!query) return;
+function esconderSugestoes(listEl) {
+  listEl.innerHTML = "";
+}
 
-    const results = data.filter(item =>
-      normalize(item.nome).includes(query) ||
-      normalize(item.sigla || "").includes(query)
-    ).slice(0, 10);
-
-    results.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item.nome;
-      li.addEventListener("click", () => {
-        inputEl.value = item.nome;
-        listEl.innerHTML = "";
-        onSelect(item);
-      });
-      listEl.appendChild(li);
+function mostrarSugestoes(listEl, itens, onSelect) {
+  listEl.innerHTML = "";
+  itens.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item.rotulo;
+    li.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+      onSelect(item);
+      esconderSugestoes(listEl);
     });
+    listEl.appendChild(li);
   });
 }
 
-// Buscar prefeito e vereadores
+async function carregarEstado(uf) {
+  renderMessage(governadorContainer, "Carregando...");
+  renderMessage(viceGovernadorContainer, "Carregando...");
+
+  const [governadores, viceGovernadores] = await Promise.all([
+    getJSON(`${API_BASE}/api/governadores/${uf}`),
+    getJSON(`${API_BASE}/api/vicegovernadores/${uf}`),
+  ]);
+
+  renderCards(
+    governadorContainer,
+    governadores,
+    "Governador não encontrado.",
+    { onlyFirst: true }
+  );
+
+  renderCards(
+    viceGovernadorContainer,
+    viceGovernadores,
+    "Vice-Governador não encontrado.",
+    { onlyFirst: true }
+  );
+}
+
 async function carregarMunicipio(uf, cidade) {
-  prefeitoContainer.innerHTML = "<p>Carregando...</p>";
-  vereadoresContainer.innerHTML = "<p>Carregando...</p>";
+  renderMessage(prefeitoContainer, "Carregando...");
+  renderMessage(vicePrefeitoContainer, "Carregando...");
+  renderMessage(vereadoresContainer, "Carregando...");
 
-  const prefeitos = await getJSON(`${API}/api/prefeitos/${uf}/${encodeURIComponent(cidade)}`);
-  const vereadores = await getJSON(`${API}/api/vereadores/${uf}/${encodeURIComponent(cidade)}`);
+  const [prefeitos, vicePrefeitos, vereadores] = await Promise.all([
+    getJSON(`${API_BASE}/api/prefeitos/${uf}/${encodeURIComponent(cidade)}`),
+    getJSON(`${API_BASE}/api/viceprefeitos/${uf}/${encodeURIComponent(cidade)}`),
+    getJSON(`${API_BASE}/api/vereadores/${uf}/${encodeURIComponent(cidade)}`),
+  ]);
 
-  if (prefeitos.length) {
-    prefeitoContainer.innerHTML = card(prefeitos[0]); // só 1 prefeito eleito
-  } else {
-    prefeitoContainer.innerHTML = "<p>Prefeito não encontrado.</p>";
+  renderCards(
+    prefeitoContainer,
+    prefeitos,
+    "Prefeito não encontrado.",
+    { onlyFirst: true }
+  );
+
+  renderCards(
+    vicePrefeitoContainer,
+    vicePrefeitos,
+    "Vice-Prefeito não encontrado.",
+    { onlyFirst: true }
+  );
+
+  renderCards(
+    vereadoresContainer,
+    vereadores,
+    "Nenhum vereador encontrado."
+  );
+}
+
+function handleUfInput() {
+  const consulta = normalize(ufInput.value);
+  if (!consulta) {
+    esconderSugestoes(ufList);
+    return;
   }
 
-  vereadoresContainer.innerHTML =
-    vereadores.length ? vereadores.map(card).join("") : "<p>Nenhum vereador encontrado.</p>";
-}
-// Carregar governador
-const governadores = await getJSON(`${API}/api/governadores/${uf}`);
-governadorContainer.innerHTML =
-  governadores.length ? governadores.map(card).join("") : "<p>Governador não encontrado.</p>";
+  const resultados = estados
+    .filter(
+      (estado) =>
+        normalize(estado.nome).includes(consulta) ||
+        normalize(estado.sigla).includes(consulta)
+    )
+    .slice(0, 10)
+    .map((estado) => ({
+      ...estado,
+      rotulo: `${estado.nome} (${estado.sigla})`,
+    }));
 
-// Carregar vice-governador
-const vicegovernadores = await getJSON(`${API}/api/vicegovernadores/${uf}`);
-vicegovernadorContainer.innerHTML =
-  vicegovernadores.length ? vicegovernadores.map(card).join("") : "<p>Vice-Governador não encontrado.</p>";
+  if (resultados.length === 0) {
+    esconderSugestoes(ufList);
+    return;
+  }
 
-// Carregar vice-prefeito
-const viceprefeitos = await getJSON(`${API}/api/viceprefeitos/${uf}/${encodeURIComponent(cidade)}`);
-viceprefeitoContainer.innerHTML =
-  viceprefeitos.length ? viceprefeitos.map(card).join("") : "<p>Vice-Prefeito não encontrado.</p>";
-
-
-// ---- Inicialização ----
-(async () => {
-  estados = await getJSON("/api/estados");
-
-  createAutocomplete(ufInput, estados, async (estado) => {
-    cidadeInput.disabled = false;
+  mostrarSugestoes(ufList, resultados, async (estado) => {
+    ufInput.value = estado.rotulo;
+    estadoSelecionado = estado;
+    cidadeInput.disabled = true;
     cidadeInput.value = "";
-    cidades = await getJSON(`/api/cidades/${estado.sigla}`);
-    createAutocomplete(cidadeInput, cidades, (cidade) => {
-      carregarMunicipio(estado.sigla, cidade.nome);
-    });
+    esconderSugestoes(cidadeList);
+    limparMunicipio();
+
+    await carregarEstado(estado.sigla);
+
+    cidades = await getJSON(`${API_BASE}/api/cidades/${estado.sigla}`);
+    cidadeInput.disabled = false;
+    cidadeInput.focus();
   });
+}
+
+function handleCidadeInput() {
+  const consulta = normalize(cidadeInput.value);
+  if (!consulta) {
+    esconderSugestoes(cidadeList);
+    return;
+  }
+
+  const resultados = cidades
+    .filter((cidade) => normalize(cidade.nome).includes(consulta))
+    .slice(0, 10)
+    .map((cidade) => ({ ...cidade, rotulo: cidade.nome }));
+
+  if (resultados.length === 0) {
+    esconderSugestoes(cidadeList);
+    return;
+  }
+
+  mostrarSugestoes(cidadeList, resultados, (cidade) => {
+    cidadeInput.value = cidade.nome;
+    esconderSugestoes(cidadeList);
+    if (estadoSelecionado) {
+      carregarMunicipio(estadoSelecionado.sigla, cidade.nome);
+    }
+  });
+}
+
+ufInput.addEventListener("input", handleUfInput);
+ufInput.addEventListener("focus", () => {
+  if (ufInput.value) {
+    handleUfInput();
+  }
+});
+
+cidadeInput.addEventListener("input", handleCidadeInput);
+cidadeInput.addEventListener("focus", () => {
+  if (cidadeInput.value) {
+    handleCidadeInput();
+  }
+});
+
+[ufInput.parentElement, cidadeInput.parentElement].forEach((wrapper, index) => {
+  const listEl = index === 0 ? ufList : cidadeList;
+  wrapper.addEventListener("mouseleave", () => esconderSugestoes(listEl));
+});
+
+document.addEventListener("click", (event) => {
+  if (!ufInput.parentElement.contains(event.target)) {
+    esconderSugestoes(ufList);
+  }
+  if (!cidadeInput.parentElement.contains(event.target)) {
+    esconderSugestoes(cidadeList);
+  }
+});
+
+(async function init() {
+  limparEstado();
+  estados = await getJSON(`${API_BASE}/api/estados`);
 })();

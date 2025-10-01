@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ICMP - Iniciativa Cidadã</title>
+  <title>Votações - ICMP</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -12,10 +12,11 @@
     <div class="container nav-container">
       <a href="index.html" class="nav-logo">ICMP</a>
       <ul class="nav-links">
-        <li><a href="index.html" aria-current="page">Início</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="quem-cobrar.html">Quem Cobrar?</a></li>
         <li><a href="organograma.html">Organograma</a></li>
         <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="votacoes.html" aria-current="page">Votações</a></li>
         <li><a href="missao.html">Nossa Missão</a></li>
       </ul>
     </div>
@@ -24,36 +25,24 @@
   <!-- 🔹 Cabeçalho -->
   <header>
     <div class="container">
-      <h1>ICMP</h1>
-      <p>Iniciativa Cidadã de Monitoramento Político</p>
+      <h1>Votações do Congresso</h1>
+      <p>Acompanhe as últimas decisões na Câmara e no Senado.</p>
     </div>
   </header>
 
-  <!-- 🔹 Missão -->
+  <!-- 🔹 Conteúdo -->
   <main class="container">
+    <!-- Câmara -->
     <section class="section-card">
-      <h2>O Voto Consciente é o Futuro do Brasil.</h2>
-      <p>
-        Nossa missão é simples: fornecer a você, cidadão brasileiro, as informações
-        necessárias para que sua decisão nas urnas seja baseada em fatos, não em promessas vazias.
-      </p>
-      <p>
-        Acreditamos que a transparência é a chave para uma democracia forte. Por isso,
-        este projeto é <strong>independente, neutro e sem viés político</strong>.
-      </p>
-    </section>
-
-    <!-- 🔹 Votações da Câmara -->
-    <section class="section-card">
-      <h2>📊 Últimas Votações na Câmara</h2>
+      <h2>📊 Votações Recentes na Câmara</h2>
       <div id="camara-votacoes" class="news-grid">
         <p>Carregando votações...</p>
       </div>
     </section>
 
-    <!-- 🔹 Votações do Senado -->
+    <!-- Senado -->
     <section class="section-card">
-      <h2>🏛️ Últimas Votações no Senado</h2>
+      <h2>🏛️ Votações Recentes no Senado</h2>
       <div id="senado-votacoes" class="news-grid">
         <p>Carregando votações...</p>
       </div>
@@ -84,6 +73,7 @@
             <h3>${v.descricao}</h3>
             <p><strong>Data:</strong> ${v.data}</p>
             <p><strong>Resultado:</strong> ${v.resultado}</p>
+            ${v.resumo ? `<p><strong>Resumo:</strong> ${v.resumo}</p>` : ""}
             <a href="${v.link}" target="_blank">Ver detalhes</a>
           </div>
         `).join("");

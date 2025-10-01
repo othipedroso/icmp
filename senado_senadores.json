@@ -1,0 +1,5 @@
+[
+  { "id": 2001, "nome": "Helena Prado", "cargo": "Senadora", "partido": "PSB", "uf": "SP", "foto": "https://via.placeholder.com/160x200.png?text=Helena+Prado", "tipo": "senado" },
+  { "id": 2002, "nome": "Ricardo Menezes", "cargo": "Senador", "partido": "UNI", "uf": "RJ", "foto": "https://via.placeholder.com/160x200.png?text=Ricardo+Menezes", "tipo": "senado" },
+  { "id": 2003, "nome": "Sofia Almeida", "cargo": "Senadora", "partido": "VER", "uf": "MG", "foto": "https://via.placeholder.com/160x200.png?text=Sofia+Almeida", "tipo": "senado" }
+]

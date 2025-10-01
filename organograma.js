@@ -1,7 +1,7 @@
 // js/organograma.js
 import { getJSON, card, normalize } from "./utils.js";
 
-const API = "http://localhost:3000";
+const API_BASE = "";
 
 const estadoInput = document.getElementById("estado-input");
 const estadoSugestoes = document.getElementById("estado-sugestoes");
@@ -17,17 +17,17 @@ let cidades = [];
 
 // Carregar estados no início
 async function carregarEstados() {
-  estados = await getJSON(`${API}/api/estados`);
+  estados = await getJSON(`${API_BASE}/api/estados`);
 }
 
 // Sugestões de estados
 estadoInput.addEventListener("input", () => {
-  const q = estadoInput.value.toLowerCase();
+  const q = normalize(estadoInput.value);
   estadoSugestoes.innerHTML = "";
   if (!q) return;
 
   const matches = estados.filter(e =>
-    e.nome.toLowerCase().includes(q) || e.sigla.toLowerCase().includes(q)
+    normalize(e.nome).includes(q) || normalize(e.sigla).includes(q)
   ).slice(0, 10);
 
   matches.forEach(e => {
@@ -36,7 +36,7 @@ estadoInput.addEventListener("input", () => {
     div.addEventListener("click", async () => {
       estadoInput.value = e.sigla;
       estadoSugestoes.innerHTML = "";
-      cidades = await getJSON(`${API}/api/cidades/${e.sigla}`);
+      cidades = await getJSON(`${API_BASE}/api/cidades/${e.sigla}`);
       cidadeInput.disabled = false;
 
       carregarFederais(e.sigla);
@@ -48,11 +48,13 @@ estadoInput.addEventListener("input", () => {
 
 // Sugestões de cidades
 cidadeInput.addEventListener("input", () => {
-  const q = cidadeInput.value.toLowerCase();
+  const q = normalize(cidadeInput.value);
   cidadeSugestoes.innerHTML = "";
   if (!q) return;
 
-  const matches = cidades.filter(c => c.nome.toLowerCase().includes(q)).slice(0, 10);
+  const matches = cidades
+    .filter(c => normalize(c.nome).includes(q))
+    .slice(0, 10);
 
   matches.forEach(c => {
     const div = document.createElement("div");
@@ -69,7 +71,7 @@ cidadeInput.addEventListener("input", () => {
 // Deputados Federais
 async function carregarFederais(uf) {
   federalContainer.innerHTML = "<p>Carregando...</p>";
-  const deputados = await getJSON(`${API}/api/camara/deputados?siglaUf=${uf}`);
+  const deputados = await getJSON(`${API_BASE}/api/camara/deputados?siglaUf=${uf}`);
 
   const tratados = deputados.map(d => ({
     id: d.id,
@@ -78,6 +80,7 @@ async function carregarFederais(uf) {
     partido: d.siglaPartido || d.ultimoStatus?.siglaPartido || "",
     uf: d.siglaUf || d.ultimoStatus?.siglaUf || uf,
     foto: d.urlFoto || d.ultimoStatus?.urlFoto,
+    tipo: "camara",
   }));
 
   federalContainer.innerHTML = tratados.length
@@ -88,7 +91,7 @@ async function carregarFederais(uf) {
 // Senadores
 async function carregarSenadores(uf) {
   estadualContainer.innerHTML = "<p>Carregando...</p>";
-  const senadores = await getJSON(`${API}/api/senado/senadores`);
+  const senadores = await getJSON(`${API_BASE}/api/senado/senadores`);
   const lista = senadores.filter(s => s.uf.toLowerCase() === uf.toLowerCase());
 
   estadualContainer.innerHTML = lista.length
@@ -100,12 +103,16 @@ async function carregarSenadores(uf) {
 async function carregarMunicipais(uf, cidade) {
   municipalContainer.innerHTML = "<p>Carregando...</p>";
 
-  const prefeitos = await getJSON(`${API}/api/prefeitos/${uf}/${encodeURIComponent(cidade)}`);
-  const vereadores = await getJSON(`${API}/api/vereadores/${uf}/${encodeURIComponent(cidade)}`);
+  const prefeitos = await getJSON(`${API_BASE}/api/prefeitos/${uf}/${encodeURIComponent(cidade)}`);
+  const vereadores = await getJSON(`${API_BASE}/api/vereadores/${uf}/${encodeURIComponent(cidade)}`);
 
-  const prefeito = prefeitos.length ? card(prefeitos[0]) : "<p>Prefeito não encontrado.</p>";
+  const prefeito = prefeitos.length
+    ? card({ ...prefeitos[0], tipo: prefeitos[0].tipo || "tse" })
+    : "<p>Prefeito não encontrado.</p>";
   const vereadoresHtml = vereadores.length
-    ? vereadores.map(card).join("")
+    ? vereadores
+        .map(v => card({ ...v, tipo: v.tipo || "tse" }))
+        .join("")
     : "<p>Nenhum vereador encontrado.</p>";
 
   municipalContainer.innerHTML = `

@@ -1,0 +1,90 @@
+{
+  "1001": {
+    "perfil": {
+      "id": 1001,
+      "nome": "Ana Souza",
+      "nomeCivil": "Ana Beatriz Souza",
+      "cargo": "Deputada Federal",
+      "partido": "PSB",
+      "uf": "SP",
+      "situacao": "Exercício",
+      "gabinete": { "telefone": "(61) 3215-1001", "sala": "425", "predio": "Anexo IV" },
+      "email": "ana.souza@camara.leg.br",
+      "urlPerfilOficial": "https://www.camara.leg.br/deputados/1001",
+      "foto": "https://via.placeholder.com/160x200.png?text=Ana+Souza"
+    },
+    "gastos": {
+      "total": 325432.12,
+      "quantidade": 12,
+      "itens": [
+        { "ano": 2024, "mes": 5, "tipo": "Divulgação", "fornecedor": "Agência Prisma", "valor": 25432.12, "documento": "https://camara.leg.br/docs/ana-souza-2024-05.pdf" },
+        { "ano": 2024, "mes": 4, "tipo": "Passagens", "fornecedor": "Gol Linhas Aéreas", "valor": 13420.5, "documento": "https://camara.leg.br/docs/ana-souza-2024-04.pdf" }
+      ]
+    },
+    "proposicoes": {
+      "total": 48,
+      "itens": [
+        { "id": 6001, "sigla": "PL", "numero": "321", "ano": "2024", "ementa": "Institui o programa de inovação em escolas públicas.", "dataApresentacao": "2024-04-12", "uri": "https://www.camara.leg.br/proposicoes?id=6001", "status": "Em tramitação" },
+        { "id": 5999, "sigla": "REQ", "numero": "88", "ano": "2023", "ementa": "Requer audiência pública sobre mobilidade urbana.", "dataApresentacao": "2023-10-18", "uri": "https://www.camara.leg.br/proposicoes?id=5999", "status": "Aprovado" }
+      ]
+    },
+    "votacoes": {
+      "total": 128,
+      "itens": [
+        { "id": "2024-05-27-1", "data": "2024-05-27", "hora": "19:45", "descricao": "PEC da reforma tributária", "proposicaoSigla": "PEC", "proposicaoNumero": "45", "proposicaoAno": "2019", "orientacao": "PSB-SIM", "voto": "Sim", "resultado": "Aprovado", "url": "https://www.camara.leg.br/votacao?id=2024-05-27-1" },
+        { "id": "2024-05-15-3", "data": "2024-05-15", "hora": "16:20", "descricao": "PL do marco das garantias", "proposicaoSigla": "PL", "proposicaoNumero": "4188", "proposicaoAno": "2021", "orientacao": "PSB-Não", "voto": "Não", "resultado": "Aprovado", "url": "https://www.camara.leg.br/votacao?id=2024-05-15-3" }
+      ],
+      "resumo": { "Sim": 82, "Não": 33, "Abstenção": 8, "Obstrução": 5 }
+    },
+    "fontes": {
+      "perfil": "https://www.camara.leg.br/deputados/1001",
+      "despesas": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001/despesas",
+      "proposicoes": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001/proposicoes",
+      "votacoes": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001/votacoes"
+    }
+  },
+  "1002": {
+    "perfil": {
+      "id": 1002,
+      "nome": "Bruno Lima",
+      "nomeCivil": "Bruno Andrade Lima",
+      "cargo": "Deputado Federal",
+      "partido": "UNI",
+      "uf": "RJ",
+      "situacao": "Exercício",
+      "gabinete": { "telefone": "(61) 3215-2002", "sala": "310", "predio": "Anexo III" },
+      "email": "bruno.lima@camara.leg.br",
+      "urlPerfilOficial": "https://www.camara.leg.br/deputados/1002",
+      "foto": "https://via.placeholder.com/160x200.png?text=Bruno+Lima"
+    },
+    "gastos": {
+      "total": 298765.9,
+      "quantidade": 10,
+      "itens": [
+        { "ano": 2024, "mes": 6, "tipo": "Locação de veículos", "fornecedor": "Rio Locações", "valor": 15432.77, "documento": "https://www.camara.leg.br/docs/bruno-lima-2024-06.pdf" },
+        { "ano": 2024, "mes": 5, "tipo": "Serviços postais", "fornecedor": "Correios", "valor": 5420.1, "documento": "https://www.camara.leg.br/docs/bruno-lima-2024-05.pdf" }
+      ]
+    },
+    "proposicoes": {
+      "total": 35,
+      "itens": [
+        { "id": 6100, "sigla": "PL", "numero": "4102", "ano": "2023", "ementa": "Dispõe sobre transparência em obras públicas.", "dataApresentacao": "2023-09-01", "uri": "https://www.camara.leg.br/proposicoes?id=6100", "status": "Em tramitação" },
+        { "id": 6033, "sigla": "PEC", "numero": "12", "ano": "2022", "ementa": "Altera o art. 37 da Constituição para prever avaliação anual.", "dataApresentacao": "2022-05-30", "uri": "https://www.camara.leg.br/proposicoes?id=6033", "status": "Arquivada" }
+      ]
+    },
+    "votacoes": {
+      "total": 140,
+      "itens": [
+        { "id": "2024-06-05-2", "data": "2024-06-05", "hora": "21:10", "descricao": "PL da segurança digital", "proposicaoSigla": "PL", "proposicaoNumero": "2511", "proposicaoAno": "2022", "orientacao": "UNI-Sim", "voto": "Sim", "resultado": "Aprovado", "url": "https://www.camara.leg.br/votacao?id=2024-06-05-2" },
+        { "id": "2024-05-08-4", "data": "2024-05-08", "hora": "18:05", "descricao": "MP do piso da enfermagem", "proposicaoSigla": "MPV", "proposicaoNumero": "1176", "proposicaoAno": "2023", "orientacao": "UNI-Liberado", "voto": "Abstenção", "resultado": "Aprovado", "url": "https://www.camara.leg.br/votacao?id=2024-05-08-4" }
+      ],
+      "resumo": { "Sim": 76, "Não": 28, "Abstenção": 11, "Liberado": 9, "Obstrução": 6 }
+    },
+    "fontes": {
+      "perfil": "https://www.camara.leg.br/deputados/1002",
+      "despesas": "https://dadosabertos.camara.leg.br/api/v2/deputados/1002/despesas",
+      "proposicoes": "https://dadosabertos.camara.leg.br/api/v2/deputados/1002/proposicoes",
+      "votacoes": "https://dadosabertos.camara.leg.br/api/v2/deputados/1002/votacoes"
+    }
+  }
+}

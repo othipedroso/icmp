@@ -51,6 +51,23 @@ icmp/
 ├─ perfil.html
 └─ missao.html
 
+## ⚙️ Instalação e Uso
+
+### 1. Clonar o repositório
+```bash
+git clone https://github.com/seu-usuario/icmp.git
+cd 
+
+2. Instalar dependências
+cd backend
+npm install
+
+3. Executar o servidor
+npm start
+
+4. Acessar no navegador
+http://localhost:3000
+
 📊 Dados do TSE (2024)
 
 O projeto utiliza o arquivo:
@@ -89,6 +106,5 @@ Você pode usar, copiar, modificar e distribuir livremente, desde que mantenha o
 ✨ Autor
 
 Desenvolvido por Thiago Pedroso
-
 
 📍 Brasil | 🌐 Projeto independente e sem viés político

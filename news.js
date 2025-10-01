@@ -1,4 +1,4 @@
-const API = "http://localhost:3000";
+const API_BASE = "";
 const newsContainer = document.getElementById("news-container");
 
 async function getJSON(url) {
@@ -46,8 +46,8 @@ function renderNews(items) {
 
 async function loadLatest() {
   const [camara, senado] = await Promise.all([
-    getJSON(`${API}/api/camara/noticias-rss?tema=ULTIMAS`),
-    getJSON(`${API}/api/senado/noticias-rss`),
+    getJSON(`${API_BASE}/api/camara/noticias-rss?tema=ULTIMAS`),
+    getJSON(`${API_BASE}/api/senado/noticias-rss`),
   ]);
 
   const all = mergeAndSortNews(camara, senado);

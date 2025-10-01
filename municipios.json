@@ -1,0 +1,135 @@
+{
+  "AC": [
+    { "id": "AC-1", "nome": "Rio Branco" },
+    { "id": "AC-2", "nome": "Cruzeiro do Sul" },
+    { "id": "AC-3", "nome": "Tarauacá" }
+  ],
+  "AL": [
+    { "id": "AL-1", "nome": "Maceió" },
+    { "id": "AL-2", "nome": "Arapiraca" },
+    { "id": "AL-3", "nome": "Palmeira dos Índios" }
+  ],
+  "AM": [
+    { "id": "AM-1", "nome": "Manaus" },
+    { "id": "AM-2", "nome": "Parintins" },
+    { "id": "AM-3", "nome": "Itacoatiara" }
+  ],
+  "AP": [
+    { "id": "AP-1", "nome": "Macapá" },
+    { "id": "AP-2", "nome": "Santana" },
+    { "id": "AP-3", "nome": "Oiapoque" }
+  ],
+  "BA": [
+    { "id": "BA-1", "nome": "Salvador" },
+    { "id": "BA-2", "nome": "Feira de Santana" },
+    { "id": "BA-3", "nome": "Vitória da Conquista" }
+  ],
+  "CE": [
+    { "id": "CE-1", "nome": "Fortaleza" },
+    { "id": "CE-2", "nome": "Juazeiro do Norte" },
+    { "id": "CE-3", "nome": "Sobral" }
+  ],
+  "DF": [
+    { "id": "DF-1", "nome": "Brasília" }
+  ],
+  "ES": [
+    { "id": "ES-1", "nome": "Vitória" },
+    { "id": "ES-2", "nome": "Vila Velha" },
+    { "id": "ES-3", "nome": "Serra" }
+  ],
+  "GO": [
+    { "id": "GO-1", "nome": "Goiânia" },
+    { "id": "GO-2", "nome": "Anápolis" },
+    { "id": "GO-3", "nome": "Aparecida de Goiânia" }
+  ],
+  "MA": [
+    { "id": "MA-1", "nome": "São Luís" },
+    { "id": "MA-2", "nome": "Imperatriz" },
+    { "id": "MA-3", "nome": "Caxias" }
+  ],
+  "MG": [
+    { "id": "MG-1", "nome": "Belo Horizonte" },
+    { "id": "MG-2", "nome": "Uberlândia" },
+    { "id": "MG-3", "nome": "Juiz de Fora" }
+  ],
+  "MS": [
+    { "id": "MS-1", "nome": "Campo Grande" },
+    { "id": "MS-2", "nome": "Dourados" },
+    { "id": "MS-3", "nome": "Três Lagoas" }
+  ],
+  "MT": [
+    { "id": "MT-1", "nome": "Cuiabá" },
+    { "id": "MT-2", "nome": "Várzea Grande" },
+    { "id": "MT-3", "nome": "Rondonópolis" }
+  ],
+  "PA": [
+    { "id": "PA-1", "nome": "Belém" },
+    { "id": "PA-2", "nome": "Santarém" },
+    { "id": "PA-3", "nome": "Ananindeua" }
+  ],
+  "PB": [
+    { "id": "PB-1", "nome": "João Pessoa" },
+    { "id": "PB-2", "nome": "Campina Grande" },
+    { "id": "PB-3", "nome": "Patos" }
+  ],
+  "PE": [
+    { "id": "PE-1", "nome": "Recife" },
+    { "id": "PE-2", "nome": "Jaboatão dos Guararapes" },
+    { "id": "PE-3", "nome": "Olinda" }
+  ],
+  "PI": [
+    { "id": "PI-1", "nome": "Teresina" },
+    { "id": "PI-2", "nome": "Parnaíba" },
+    { "id": "PI-3", "nome": "Picos" }
+  ],
+  "PR": [
+    { "id": "PR-1", "nome": "Curitiba" },
+    { "id": "PR-2", "nome": "Londrina" },
+    { "id": "PR-3", "nome": "Maringá" }
+  ],
+  "RJ": [
+    { "id": "RJ-1", "nome": "Rio de Janeiro" },
+    { "id": "RJ-2", "nome": "Niterói" },
+    { "id": "RJ-3", "nome": "Duque de Caxias" }
+  ],
+  "RN": [
+    { "id": "RN-1", "nome": "Natal" },
+    { "id": "RN-2", "nome": "Mossoró" },
+    { "id": "RN-3", "nome": "Parnamirim" }
+  ],
+  "RO": [
+    { "id": "RO-1", "nome": "Porto Velho" },
+    { "id": "RO-2", "nome": "Ji-Paraná" },
+    { "id": "RO-3", "nome": "Ariquemes" }
+  ],
+  "RR": [
+    { "id": "RR-1", "nome": "Boa Vista" },
+    { "id": "RR-2", "nome": "Rorainópolis" },
+    { "id": "RR-3", "nome": "Caracaraí" }
+  ],
+  "RS": [
+    { "id": "RS-1", "nome": "Porto Alegre" },
+    { "id": "RS-2", "nome": "Caxias do Sul" },
+    { "id": "RS-3", "nome": "Pelotas" }
+  ],
+  "SC": [
+    { "id": "SC-1", "nome": "Florianópolis" },
+    { "id": "SC-2", "nome": "Joinville" },
+    { "id": "SC-3", "nome": "Blumenau" }
+  ],
+  "SE": [
+    { "id": "SE-1", "nome": "Aracaju" },
+    { "id": "SE-2", "nome": "Nossa Senhora do Socorro" },
+    { "id": "SE-3", "nome": "Lagarto" }
+  ],
+  "SP": [
+    { "id": "SP-1", "nome": "São Paulo" },
+    { "id": "SP-2", "nome": "Campinas" },
+    { "id": "SP-3", "nome": "Santos" }
+  ],
+  "TO": [
+    { "id": "TO-1", "nome": "Palmas" },
+    { "id": "TO-2", "nome": "Araguaína" },
+    { "id": "TO-3", "nome": "Gurupi" }
+  ]
+}

@@ -10,9 +10,25 @@ export async function getJSON(url) {
 }
 
 export function card(p) {
+  const params = new URLSearchParams();
+  if (p?.id !== undefined && p?.id !== null) {
+    params.set("id", p.id);
+  }
+  const tipoInferido = (() => {
+    if (p?.tipo) return p.tipo;
+    const cargo = (p?.cargo || "").toLowerCase();
+    if (cargo.includes("senador")) return "senado";
+    if (cargo.includes("deputado")) return "camara";
+    return undefined;
+  })();
+  if (tipoInferido) {
+    params.set("tipo", tipoInferido);
+  }
+
+  const href = `perfil.html?${params.toString()}`;
   return `
-    <a class="role-card" href="perfil.html?id=${p.id}">
-      <img src="${p.foto}" alt="Foto de ${p.nome}" onerror="this.src='/photos/placeholder.jpg'">
+    <a class="role-card" href="${href}">
+      <img src="${p.foto}" alt="Foto de ${p.nome}" onerror="this.onerror=null;this.src='https://via.placeholder.com/160x200.png?text=Sem+Foto';">
       <div class="role-body">
         <h5>${p.nome}</h5>
         <p>${p.cargo}</p>

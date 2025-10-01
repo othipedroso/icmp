@@ -1,0 +1,134 @@
+{
+  "2001": {
+    "perfil": {
+      "id": 2001,
+      "nome": "Helena Prado",
+      "nomeCivil": "Helena Martins Prado",
+      "cargo": "Senadora",
+      "partido": "PSB",
+      "uf": "SP",
+      "situacao": "Exercício",
+      "gabinete": { "telefone": "(61) 3303-2001", "sala": "Ala Sen. Antônio Carlos" },
+      "email": "helena.prado@senado.leg.br",
+      "urlPerfilOficial": "https://www25.senado.leg.br/web/senadores/helena-prado",
+      "foto": "https://via.placeholder.com/160x200.png?text=Helena+Prado"
+    },
+    "gastos": {
+      "total": 187654.44,
+      "quantidade": 9,
+      "itens": [
+        { "ano": 2024, "mes": 5, "tipo": "Cota parlamentar", "fornecedor": "Hotel Brasília", "valor": 11234.5, "documento": "https://senado.leg.br/docs/helena-prado-2024-05.pdf" },
+        { "ano": 2024, "mes": 4, "tipo": "Divulgação de atividade parlamentar", "fornecedor": "Comunica Brasil", "valor": 9245.1, "documento": "https://senado.leg.br/docs/helena-prado-2024-04.pdf" }
+      ]
+    },
+    "proposicoes": {
+      "total": 22,
+      "itens": [
+        { "id": "PLS 81/2023", "sigla": "PLS", "numero": "81", "ano": "2023", "ementa": "Dispõe sobre incentivos à economia verde.", "dataApresentacao": "2023-06-18", "uri": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159999", "status": "Em tramitação" },
+        { "id": "REQ 55/2024", "sigla": "REQ", "numero": "55", "ano": "2024", "ementa": "Requer audiência pública sobre desmatamento.", "dataApresentacao": "2024-03-04", "uri": "https://www25.senado.leg.br/web/atividade/materias/-/materia/160500", "status": "Aprovado" }
+      ]
+    },
+    "votacoes": {
+      "total": 96,
+      "itens": [
+        { "id": "VOT-2024-04-30-1", "data": "2024-04-30", "hora": "18:40", "descricao": "PL do combate à fome", "proposicaoSigla": "PL", "proposicaoNumero": "1330", "proposicaoAno": "2022", "orientacao": "PSB-Sim", "voto": "Sim", "resultado": "Aprovado", "url": "https://legis.senado.leg.br/votacao?id=2024-04-30-1" },
+        { "id": "VOT-2024-03-12-2", "data": "2024-03-12", "hora": "17:15", "descricao": "PEC da transparência", "proposicaoSigla": "PEC", "proposicaoNumero": "17", "proposicaoAno": "2021", "orientacao": "PSB-Não", "voto": "Não", "resultado": "Rejeitado", "url": "https://legis.senado.leg.br/votacao?id=2024-03-12-2" }
+      ],
+      "resumo": { "Sim": 63, "Não": 21, "Abstenção": 7, "Obstrução": 5 }
+    },
+    "fontes": {
+      "perfil": "https://www25.senado.leg.br/web/senadores/helena-prado",
+      "despesas": "https://legis.senado.leg.br/dadosabertos/senador/2001/despesas",
+      "proposicoes": "https://legis.senado.leg.br/dadosabertos/senador/2001/autorias",
+      "votacoes": "https://legis.senado.leg.br/dadosabertos/senador/2001/votacoes"
+    }
+  },
+  "2002": {
+    "perfil": {
+      "id": 2002,
+      "nome": "Ricardo Menezes",
+      "nomeCivil": "Ricardo Augusto Menezes",
+      "cargo": "Senador",
+      "partido": "UNI",
+      "uf": "RJ",
+      "situacao": "Exercício",
+      "gabinete": { "telefone": "(61) 3303-2002", "sala": "Ala Sen. Nilo Coelho" },
+      "email": "ricardo.menezes@senado.leg.br",
+      "urlPerfilOficial": "https://www25.senado.leg.br/web/senadores/ricardo-menezes",
+      "foto": "https://via.placeholder.com/160x200.png?text=Ricardo+Menezes"
+    },
+    "gastos": {
+      "total": 201345.78,
+      "quantidade": 11,
+      "itens": [
+        { "ano": 2024, "mes": 6, "tipo": "Aluguel de escritório", "fornecedor": "Condomínio Centro Empresarial", "valor": 18890.0, "documento": "https://senado.leg.br/docs/ricardo-menezes-2024-06.pdf" },
+        { "ano": 2024, "mes": 5, "tipo": "Consultoria", "fornecedor": "RJ Consult", "valor": 10450.9, "documento": "https://senado.leg.br/docs/ricardo-menezes-2024-05.pdf" }
+      ]
+    },
+    "proposicoes": {
+      "total": 18,
+      "itens": [
+        { "id": "PLS 210/2023", "sigla": "PLS", "numero": "210", "ano": "2023", "ementa": "Cria política nacional de mobilidade elétrica.", "dataApresentacao": "2023-11-22", "uri": "https://www25.senado.leg.br/web/atividade/materias/-/materia/160210", "status": "Em tramitação" },
+        { "id": "PLS 35/2024", "sigla": "PLS", "numero": "35", "ano": "2024", "ementa": "Regulamenta incentivos à inovação social.", "dataApresentacao": "2024-02-14", "uri": "https://www25.senado.leg.br/web/atividade/materias/-/materia/160512", "status": "Em tramitação" }
+      ]
+    },
+    "votacoes": {
+      "total": 101,
+      "itens": [
+        { "id": "VOT-2024-06-11-3", "data": "2024-06-11", "hora": "20:10", "descricao": "PL do saneamento", "proposicaoSigla": "PL", "proposicaoNumero": "4162", "proposicaoAno": "2023", "orientacao": "UNI-Sim", "voto": "Sim", "resultado": "Aprovado", "url": "https://legis.senado.leg.br/votacao?id=2024-06-11-3" },
+        { "id": "VOT-2024-04-02-1", "data": "2024-04-02", "hora": "17:35", "descricao": "PEC das ferrovias", "proposicaoSigla": "PEC", "proposicaoNumero": "15", "proposicaoAno": "2022", "orientacao": "UNI-Não", "voto": "Não", "resultado": "Rejeitado", "url": "https://legis.senado.leg.br/votacao?id=2024-04-02-1" }
+      ],
+      "resumo": { "Sim": 58, "Não": 29, "Abstenção": 8, "Obstrução": 6 }
+    },
+    "fontes": {
+      "perfil": "https://www25.senado.leg.br/web/senadores/ricardo-menezes",
+      "despesas": "https://legis.senado.leg.br/dadosabertos/senador/2002/despesas",
+      "proposicoes": "https://legis.senado.leg.br/dadosabertos/senador/2002/autorias",
+      "votacoes": "https://legis.senado.leg.br/dadosabertos/senador/2002/votacoes"
+    }
+  },
+  "2003": {
+    "perfil": {
+      "id": 2003,
+      "nome": "Sofia Almeida",
+      "nomeCivil": "Sofia Delgado Almeida",
+      "cargo": "Senadora",
+      "partido": "VER",
+      "uf": "MG",
+      "situacao": "Exercício",
+      "gabinete": { "telefone": "(61) 3303-2003", "sala": "Ala Sen. Alexandre Costa" },
+      "email": "sofia.almeida@senado.leg.br",
+      "urlPerfilOficial": "https://www25.senado.leg.br/web/senadores/sofia-almeida",
+      "foto": "https://via.placeholder.com/160x200.png?text=Sofia+Almeida"
+    },
+    "gastos": {
+      "total": 176543.21,
+      "quantidade": 8,
+      "itens": [
+        { "ano": 2024, "mes": 6, "tipo": "Divulgação de atividade parlamentar", "fornecedor": "Minas Comunicação", "valor": 9870.0, "documento": "https://senado.leg.br/docs/sofia-almeida-2024-06.pdf" },
+        { "ano": 2024, "mes": 5, "tipo": "Passagens aéreas", "fornecedor": "Latam", "valor": 8234.9, "documento": "https://senado.leg.br/docs/sofia-almeida-2024-05.pdf" }
+      ]
+    },
+    "proposicoes": {
+      "total": 20,
+      "itens": [
+        { "id": "PLS 12/2024", "sigla": "PLS", "numero": "12", "ano": "2024", "ementa": "Estabelece políticas de tecnologia para escolas técnicas.", "dataApresentacao": "2024-01-29", "uri": "https://www25.senado.leg.br/web/atividade/materias/-/materia/160600", "status": "Em tramitação" },
+        { "id": "REQ 80/2023", "sigla": "REQ", "numero": "80", "ano": "2023", "ementa": "Solicita informações sobre obras federais em Minas Gerais.", "dataApresentacao": "2023-08-19", "uri": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159850", "status": "Aprovado" }
+      ]
+    },
+    "votacoes": {
+      "total": 94,
+      "itens": [
+        { "id": "VOT-2024-05-22-2", "data": "2024-05-22", "hora": "19:05", "descricao": "PL de incentivo à ciência", "proposicaoSigla": "PL", "proposicaoNumero": "999", "proposicaoAno": "2022", "orientacao": "VER-Sim", "voto": "Sim", "resultado": "Aprovado", "url": "https://legis.senado.leg.br/votacao?id=2024-05-22-2" },
+        { "id": "VOT-2024-04-16-4", "data": "2024-04-16", "hora": "17:55", "descricao": "PEC da responsabilidade fiscal", "proposicaoSigla": "PEC", "proposicaoNumero": "9", "proposicaoAno": "2021", "orientacao": "VER-Não", "voto": "Não", "resultado": "Rejeitado", "url": "https://legis.senado.leg.br/votacao?id=2024-04-16-4" }
+      ],
+      "resumo": { "Sim": 61, "Não": 22, "Abstenção": 6, "Obstrução": 5 }
+    },
+    "fontes": {
+      "perfil": "https://www25.senado.leg.br/web/senadores/sofia-almeida",
+      "despesas": "https://legis.senado.leg.br/dadosabertos/senador/2003/despesas",
+      "proposicoes": "https://legis.senado.leg.br/dadosabertos/senador/2003/autorias",
+      "votacoes": "https://legis.senado.leg.br/dadosabertos/senador/2003/votacoes"
+    }
+  }
+}
